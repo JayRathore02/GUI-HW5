@@ -1,0 +1,167 @@
+/*
+File: my.css
+GUI Assignment: Create a small scrabble implementation
+Jayendra Rathore, Jayendra_Rathore@student.uml.edu 
+Date Created: June 26, 2023
+Description: This is the css for the page and adds style to the board game (more like row instead of board)
+*/
+
+/* Sets background color of the entire page */
+body {
+    background-color: rgb(225, 211, 181);
+}
+
+/* Underlines things that have the class of underline */
+.underline {
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+/* makes the row class flexible */
+.row {
+    display: flex;
+}
+
+/* This class is for the score counter and other counters and adds borders and different colors to it */
+.col-md-3 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/* makes the horizontal line thicker */
+hr {
+    border: none;
+    border-top: 4px dashed black;
+}
+
+/* Makes text for counters bigger and adds unique styling to make text blue */
+#gameInfo {
+    font-size: larger;
+    color: blue;
+    background-color: aliceblue;
+    margin-bottom: 30px;
+}
+
+/* makes paragraph text black and capital */
+p {
+    color: black;
+    text-transform: lowercase;
+    text-transform: capitalize;
+}
+
+/* Makes is so p tags and span tags don't overflow*/
+span,
+p {
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+/* makes color of text in a disabled button gray and also does not allow the cursor to touch it */
+button:disabled {
+    cursor: not-allowed;
+    color: gray;
+}
+
+/* Sets images on the board row and gives them heights and widths */
+.boardSquare {
+    width: 80px;
+    height: 85px;
+    margin: 1px;
+    border-width: 1px;
+    background-image: url('/images/Scrabble_Tile_Blank.png');
+}
+
+/* This is and space6 set the image of tile 2 and 6 on the board a bonus multiplier */
+#space2 {
+    background-image: url('/images/Scrabble_Double_Word_Score.png');
+    background-size: 100% 100%;
+}
+
+
+#space6 {
+    background-image: url('/images/Scrabble_Double_Letter_Score.png');
+    background-size: 100% 100%;
+}
+
+
+/* Adds the tile rack and gives it properties */
+.tileHolder {
+    width: 630px;
+    height: 120px;
+    background-image: url('/images/Scrabble_Tile_Holder.png');
+    background-repeat: no-repeat;
+    margin: 20px auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+}
+
+/* Sets the height of the rack */
+.playerRack {
+    height: 85px;
+}
+
+/* Blank tile */
+#blankTilePicker {
+    position: fixed;
+    top: 50%;
+    width: 450px;
+    height: 450px;
+    left: 50%;
+    z-index: 101;
+    transform: translate(-250px, -250px);
+    background: no-repeat;
+    background-size: 100%;
+    background-image: url('/images/Scrabble_Tile_Blank.jpg');
+    padding: 10px;
+}
+
+/* sets the board of the blank tile so you can choose what to use */
+@media screen and (max-width: 650px) {
+    .tileHolder {
+        height: 144px;
+        margin: 20px auto;
+        text-align: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-left: 20px;
+    }
+
+    #blankTilePicker {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        position: fixed;
+        top: 50%;
+        transform: translate(0, -250px);
+    }
+}
+
+/* size of a tile being dragged */
+.dragTile {
+    width: 80px;
+    height: 85px;
+}
+
+/* hides tiles when needed to */
+.hideTiles {
+    display: none;
+}
+
+/* this is the board row and it makes it side by side */
+#gameRow {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

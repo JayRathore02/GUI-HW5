@@ -1,0 +1,92 @@
+<!-- 
+File: index.html
+GUI Assignment: Create a dynamic multiplication table
+Jayendra Rathore, Jayendra_Rathore@student.uml.edu 
+Date Created: May 22, 2023
+Description: This is the html for the multiplcation table, it hold the form and table tags for where the table would go. It uses bootstrap 3.4.1 because that's the version I was familiar with
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Row Scrabble</title>
+    <!-- Below adds bootstrap 3.4.1-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/my.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <!--Jumotron for Title-->    
+    <div class="container jumbotron">
+        <h1 class="text-center">One Row Scrabble</h1>
+        <h2 class="text-center">By: Jay Rathore</h2>
+    </div>
+    
+    <!--This area contains the counters like the score, best score and remaining tiles-->
+    <div class="container-fluid row text-center text-info" id="gameInfo">
+      <div class="col-md-3">
+          <span class="underline">Score</span><p id="score">0</p>
+      </div>
+      <div class="col-md-3">
+          <span class="underline">Best Score</span><p id="highest">0</p>
+      </div>
+      <div class="col-md-3">
+          <span class="underline">Remaining Tiles</span><p id="remain"></p>
+      </div>
+    </div>
+    
+    <hr>
+
+    <br>
+    <br>
+    
+    <div class="container">
+        <!--Error message error that will be populated if there is an issue-->
+        <span class="errMsg"></span>
+        <!--Holds the row the game will be played on-->
+        <div id="gameRow">
+            <div class="boardSquare" id="space1"></div>
+            <div class="boardSquare" id="space2"></div>
+            <div class="boardSquare" id="space3"></div>
+            <div class="boardSquare" id="space4"></div>
+            <div class="boardSquare" id="space5"></div>
+            <div class="boardSquare" id="space6"></div>
+            <div class="boardSquare" id="space7"></div>
+        </div>
+    </div>
+      
+
+    <br>
+    <br>
+    
+    <!--Blank tile picker (shows every letter) will stay hidden until disabled -->
+    <div id="blankTilePicker" class="hideTiles"></div>
+    <!--Button to take game to next round, will be disabled until a satisfactory word is input on the board-->
+    <div class=" container text-center">
+        <button id="nextRoundButton" class="btn btn-default" onclick="nextRound()" disabled="disabled">Next Round</button>
+        <br>
+    </div>
+    
+    <!--Holds the players tiles-->
+    <div class="container tileHolder">
+        <div class="playerRack"></div>
+    </div>
+    
+    <!--Has the button to start a new game-->
+    <div class="text-center container">
+        <button id="newGameButton" class="btn btn-info" onclick="newGame()">Start New Game</button>
+        <br>
+        <br>
+    </div>
+
+</body>
+</html>
